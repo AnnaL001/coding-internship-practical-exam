@@ -1,0 +1,57 @@
+- A checked exception is a type of exception that is checked at compile time. 
+  That is, it is thrown at compile time.Examples include: FileNotFoundException and 
+  IOException. These exceptions are used during compilation time being that if not handled 
+  by either use of a try-catch block or "throws" keyword, a compilation error occurs.
+
+      // Code snippet
+      import java.io.*;
+
+      public class CheckedExceptions {
+      
+         public static void main(String [] args){
+               try{
+                      FileInputStream new_file = new FileInputStream("C://Users/lynna/Desktop/Practical_Exam/Question_1.txt");
+          
+                  } catch (FileNotFoundException ex){
+                      System.out.println("The above specified file was not found at the given path ");
+                  
+                  }
+     
+           }
+       }
+    
+
+
+
+- An unchecked exception is a type of exception that is not checked at compile time.
+  That is, it is thrown at runtime for example when a user inputs the wrong data thus
+  the programmer needs to foresee conditions in which such exceptions shall be thrown and
+  handle them appropriately.Examples include: InputMismatchException and ArithmeticException.
+
+         // Code snippet
+         import java.util.*;
+
+         public class UncheckedExceptions {
+             public static void main(String [] args){
+                int age;
+          
+                Scanner scanner = new Scanner(System.in);
+                System.out.println("Enter your age: ");
+          
+                try{
+                   
+                  //Capture user input
+                  age = scanner.nextInt();
+               }catch(InputMismatchException e){
+                   
+                  //Removal of leftover garbage from the input buffer
+                  scanner.next();
+              
+                  //Print error message
+                  System.out.println("Input age in form of a number rather than as a word");
+             }
+          
+          
+          }
+    
+       }

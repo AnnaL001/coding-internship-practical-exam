@@ -1,0 +1,27 @@
+The user interacts with the view containing a form in which the user is to input their first name and 
+second name and changes the data(model) which in turn causes the controller(studentController that is defined by use of
+ng-controller directive) to be invoked. The controller modifies the data based on the user's request, interacts with servers 
+via services and performs CRUD operations on the data. Changes in the data is detected by AngularJS and AngularJS updates 
+the view by way of a two-way data binding
+
+
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+   <div ng-app = "studentApplication" ng-controller="studentController">
+      First name : <Input type = "text" ng-model = "first_name">
+      Second name : <Input type = "text" ng-model = "second_name">
+      Full name : {{firstName + " " + secondName}}
+   </div>
+   <script>
+      var application = angular.module('studentApplication , []);
+      application.controller('studentAplication' , function($scope){
+        $scope.first_name = "Lyne"
+        $scope.last_name = "Nyangon"
+
+      });
+
+   </script>
+<body>
+<html>

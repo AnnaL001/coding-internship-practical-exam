@@ -1,0 +1,43 @@
+           /**
+            *Function to check if two strings are anagrams of each other by use of a method of counting the occurence of 
+            *characters in both strings then compare the count. If the characters are the same count in both strings
+            *they are anagrams of each other, otherwise they are not anagrams of each other
+           */
+            public static boolean areAnagrams(char string_1[], char string_2[]){
+        
+               //Creation of integer arrays of size 256
+               int first_count[] = new int[no_of_characters];
+               int second_count[] = new int[no_of_characters];
+               int i;
+         
+               //Initialization values in both integer arrays to 0
+               Arrays.fill(first_count,0);
+               Arrays.fill(second_count,0);
+       
+               /*While iterating through every character of strings input by the user, increment count in the 
+               in the corresponding array */
+              for(i = 0; i < string_1.length && i < string_2.length; i++){
+                      first_count[string_1[i]]++;
+                      second_count[string_2[i]]++;
+               }
+       
+               //If strings are of different lenths, the program should always return false
+               if (string_1.length != string_2.length){
+                      result = false;
+               } else{
+               //Compare the count arrays
+                      for(i = 0; i < no_of_characters ; i++){
+                             if(first_count[i] != second_count[i]){
+                                     result = false;
+                             }
+                                     result = true;
+                             
+                      }
+               } 
+           
+       
+           return result;
+         
+       
+    
+       }
