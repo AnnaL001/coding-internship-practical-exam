@@ -1,0 +1,1 @@
+The program gave an output of true in both the first case and the second case
